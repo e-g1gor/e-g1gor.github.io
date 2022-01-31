@@ -1,0 +1,3 @@
+- a software developer with 2+ years of professional experience
+- proficient in TypeScript, NodeJS, PostgreSQL
+- experienced in JavaScript

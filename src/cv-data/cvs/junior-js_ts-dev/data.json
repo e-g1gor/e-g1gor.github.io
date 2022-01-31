@@ -1,0 +1,21 @@
+{
+  "position": "TypeScript/JavaScript Backend Developer",
+  "about":{
+    "title": "Personal Information"
+  },
+  "content": [
+    {
+      "title": "Projects",
+      "layout": "list",
+      "content": [
+        {
+          "layout": "left",
+          "border": "weak",
+          "title": "Cryptaldash",
+          "quote": "Short overview of the project (optional)\n",
+          "description": "Description about the work on/with the project\n"
+        }
+      ]
+    }
+  ]
+}
