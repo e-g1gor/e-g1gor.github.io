@@ -12,10 +12,10 @@
         span.profile-img( style=`background-image: url(${about_profile_image})`)
     if _about.profile_image
       .col-xs-12.col-sm-8.col-md-9.col-print-12
-        include:markdown-it(linkify langPrefix='highlight-') ../cv-data/about.md
+        | !{about.content}
     else
       .col-xs-12
-        include:markdown-it(linkify langPrefix='highlight-') ../cv-data/about.md
+        | !{about.content}
     </div>
   </div>
 </div>
