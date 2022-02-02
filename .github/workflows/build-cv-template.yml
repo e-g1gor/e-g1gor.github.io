@@ -5,9 +5,9 @@ name: Build CV Template
 
 on:
   push:
-    branches: [ master ]
+    branches: [master]
   pull_request:
-    branches: [ master ]
+    branches: [master]
 
 jobs:
   build:
@@ -17,24 +17,24 @@ jobs:
     #     node-version: [16.x]
     #     # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
     steps:
-    - uses: actions/checkout@v2
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v2
-      with:
-        node-version: 16.x
-        cache: 'npm'
-    - run: npm install
-    - run: npm run build
-    # - run: npm run build --if-present
-    # - run: npm test
-    - name: Archive production artifacts
-      uses: actions/upload-artifact@v2
-      with:
-        name: GithubPages
-        path: dist
-        
+      - uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16.x
+          cache: "npm"
+      - run: npm install
+      - run: npm run build
+      # - run: npm run build --if-present
+      # - run: npm test
+      - name: Archive production artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: GithubPages
+          path: dist
+
   deploy:
+    needs: build
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/deploy-pages@v2
-
+      - uses: actions/deploy-pages@v1
