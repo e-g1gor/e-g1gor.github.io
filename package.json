@@ -11,7 +11,7 @@
     "release:major": "npm version major -m \"Released new major version %s on `date +'%Y-%m-%d'`.\"",
     "release:minor": "npm version minor -m \"Released new minor version %s on `date +'%Y-%m-%d'`.\"",
     "release:patch": "npm version patch -m \"Released new patch version %s on `date +'%Y-%m-%d'`.\"",
-    "preversion": "git pull --ff-only && npm run build:docs && git add .",
+    "preversion": "git pull --ff-only && npm run build && git add .",
     "test": "echo \"INFO: no test specified\""
   },
   "keywords": [
