@@ -14,9 +14,9 @@ const md = new MarkdownIt({
 // Parse build options from arguments
 const argv: IArgs = require("minimist")(process.argv.slice(2));
 const {
-  html: HTML = true,
+  html: HTML = false,
   pdf: PDF = false,
-  css: CSS = true,
+  css: CSS = false,
   watch: WATCH = false,
   cv: CV = "junior-js_ts-dev",
   o: OUTPUT_DIR = "dist",

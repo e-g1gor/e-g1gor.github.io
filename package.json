@@ -6,7 +6,7 @@
   "scripts": {
     "build:css": "ts-node ./dev/build.ts --css",
     "build:html": "ts-node ./dev/build.ts --html",
-    "build": "ts-node ./dev/build.ts --html",
+    "build": "ts-node ./dev/build.ts --html --css",
     "build:docs": "ts-node ./dev/build.ts --html --css -o=docs",
     "release:major": "npm version major -m \"Released new major version %s on `date +'%Y-%m-%d'`.\"",
     "release:minor": "npm version minor -m \"Released new minor version %s on `date +'%Y-%m-%d'`.\"",
