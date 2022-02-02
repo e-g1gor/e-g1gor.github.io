@@ -11,14 +11,11 @@ mixin section_list(content)
         if item.caption
           p=item.caption
         if item.link
-          if item.link_text 
-            +a_href(undefined,item.link)=item.link_text
-          else
-            +a_href(undefined, item.link)
+          +a_href()(url=item.link)=(item.link_text || item.link)
         if item.additional_links
           p.no-print.aditional-links
             each link in item.additional_links
-              +a_href("", link.url)
+              +a_href()(url=link.url)
                 i(class=link.icon title=link.title)
       .col-xs-12.col-sm-8.col-md-9.col-print-12.content
         if item.quote
