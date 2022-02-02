@@ -36,5 +36,5 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/deploy-pages
+      - uses: actions/deploy-pages@v2
 
