@@ -1,13 +1,31 @@
 mixin a_href(a_title, a_href, a_class="", a_protocol="https")
-  p=a_title ? a_title +": " : ""
-    a(href=`${a_protocol}://${a_href}` target='_blank' class=a_class)
+  -
+    const _protocol = (function(pName) {
+      if(['http', 'https', 'ftp', 'ftps'].includes(pName)) {
+        return pName+"://";
+      }
+      return pName+":";
+    })(attributes && attributes.protocol || a_protocol);
+    //- const _protocol = attributes && attributes.protocol || a_protocol;
+  - const _url = (attributes.url || a_href);
+  - const _target = attributes && attributes.target || a_title || '_blank';
+  - const _title = attributes && attributes.title || a_title;
+  - const _class = attributes && attributes.class || a_class;
+  -
+    const _params = attributes && attributes.params ? 
+      "?" + Object
+        .entries(attributes.params)
+        .map(function ([key, val]) { return key+'='+val}).join('&') 
+      : '';
+  p=_title ? _title + ": " : ""
+    a(href=`${_protocol}${_url}${_params}` target=_target class=_class)
       if block
         block
       else
-        =a_href
+        =_url.split('?')[0]
 
-mixin a_li_social(social_type, username)
-  -
+mixin a_li_social(_social_type, _username)
+  - 
     const socials_url_getters = {
       dribbble(uname) {
           return {
@@ -101,7 +119,9 @@ mixin a_li_social(social_type, username)
           }
         }, 
       }
-  - let link_info = socials_url_getters[social_type] ? socials_url_getters[social_type](username) : undefined
+  - const username = attributes && attributes.username || _username
+  - const social_type = attributes && attributes.social_type || _social_type
+  - const link_info = socials_url_getters[social_type] ? socials_url_getters[social_type](username) : undefined
   if link_info
     li
       a.button.button--sacnite.button--round-l(target='_blank' href=link_info.href)

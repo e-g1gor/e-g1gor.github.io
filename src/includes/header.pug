@@ -10,12 +10,25 @@ include mixins/a
         ul.icons.no-print
           each social_info, social_type in social
             +a_li_social(social_type, social_info.username)
-        each social_links_info, social_link_type in social
+        each social_link_info, social_link_type in social
+          //-  TODO: create mixin or function or something 
           if ["email", "phone", "websocial"].includes(social_link_type)
             -
-              const defaultTitles = {
-                email: "Email",
-                phone: "Phone",
-                websocial: "Websocial",
+              const _socialLinkDefaults = {
+                email: {
+                  defaultTitle: "Email",
+                  defaultProtocol: "mailto",
+                },
+                phone: {
+                  defaultTitle: "Phone",
+                  defaultProtocol: "phone",
+                },
+                websocial: {
+                  defaultTitle: "Websocial",
+                  defaultProtocol: "https",
+                },
               }
-            +a_href(social_links_info.title || defaultTitles[social_link_type], social_links_info.href)=social_links_info.href
+              const _linkDefaults =  _socialLinkDefaults[social_link_type]
+              const _title = social_link_info.title || _linkDefaults.defaultTitle
+              const _protocol = social_link_info.protocol || _linkDefaults.defaultProtocol
+            +a_href()(title=_title url=social_link_info.href protocol=_protocol params=social_link_info.params)

@@ -6,7 +6,7 @@ mixin project_common(item)
   if item.company
     h4=item.company
   if item.link
-    +a_href(undefined, item.link, "link")
+    +a_href()(url=item.link class="link")
   if item.job_title 
     p
       b=item.job_title
@@ -24,6 +24,10 @@ mixin project_common(item)
     p.no-print
       a(href="https://github.com/"+item.github target="_blank")
         i.fa.fa-github(title=item.name+" Github link")
+  if item.gitlab 
+    p.no-print
+      a(href="https://gitlab.com/"+item.gitlab target="_blank")
+        i.fa.fa-gitlab(title=item.name+" Gitlab link")
 
 
 mixin project(item)
