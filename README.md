@@ -1,4 +1,6 @@
 # e-g1gor.github.io
-Static resume template.  Copy of thaе ruby based one, but on NodeJS + PugJS this time
+Static CV template. Copy of [sproogen CV template](https://github.com/sproogen/modern-resume-theme), but based on NodeJS + PugJS instead of Ruby.
 
-https://e-g1gor.github.io
+Means, it does not require installing globally anything but NodeJS.
+
+Example: https://e-g1gor.github.io
