@@ -1,0 +1,21 @@
+include mixins/a
+
+.container.header-container
+  .row
+    .col-xs-12.col-sm-6.col-md-6.col-lg-8.header-left
+      h1=name
+      h2=position
+    .col-xs-12.col-sm-6.col-md-6.col-lg-4.header-right
+      if social
+        ul.icons.no-print
+          each social_info, social_type in social
+            +a_li_social(social_type, social_info.username)
+        each social_links_info, social_link_type in social
+          if ["email", "phone", "websocial"].includes(social_link_type)
+            -
+              const defaultTitles = {
+                email: "Email",
+                phone: "Phone",
+                websocial: "Websocial",
+              }
+            +a_href(social_links_info.title || defaultTitles[social_link_type], social_links_info.href)=social_links_info.href

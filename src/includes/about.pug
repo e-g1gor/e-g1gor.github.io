@@ -1,0 +1,21 @@
+-
+  var _about = {
+    ...about,
+    title: (about && about.title) ? about.title : "About Me"
+  };
+
+.container.intro-container
+  h3#about-me=_about.title
+  .row.clearfix
+    if _about.profile_image
+      .col-xs-12.col-sm-4.col-md-3.no-print
+        span.profile-img( style=`background-image: url(${about_profile_image})`)
+    if _about.profile_image
+      .col-xs-12.col-sm-8.col-md-9.col-print-12
+        | !{about.content}
+    else
+      .col-xs-12
+        | !{about.content}
+    </div>
+  </div>
+</div>

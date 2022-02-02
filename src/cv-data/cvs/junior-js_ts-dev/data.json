@@ -1,0 +1,76 @@
+{
+  "darkmode": false,
+  "position": "TypeScript/JavaScript Backend Developer",
+  "about": {
+    "title": "Personal Information"
+  },
+  "sections": [
+    {
+      "title": "Projects",
+      "layout": "projects",
+      "content": [
+        {
+          "layout": "top-middle",
+          "border": "weak",
+          "title": "Shiptify",
+          "link": "shiptify.com",
+          "role": "Developer",
+          "dates": "January 2022 – Present",
+          "quote": "Logistics platform"
+        },
+        {
+          "layout": "top-middle",
+          "border": "weak",
+          "title": "Cryptaldash",
+          "role": "Developer",
+          "dates": "April 2021 – January 2022",
+          "quote": "Cryptocurrency exchange platform with KYC."
+        },
+        {
+          "layout": "top-middle",
+          "border": "weak",
+          "title": "BCT Terminal",
+          "role": "Developer",
+          "dates": "April 2021 – May 2021",
+          "quote": "BCT Terminal ecosystem, microservices, several independent applications"
+        },
+        {
+          "layout": "top-middle",
+          "border": "weak",
+          "title": "OMN",
+          "role": "Developer",
+          "dates": "October 2019 – April 2021",
+          "quote": "It's used to cover the whole process of printed media production preparation from catalog/page concept to getting hard copy from print machine. The system has plugin client-server architecture that allows extending both server and client functionality."
+        }
+      ]
+    },
+    {
+      "title": "Experience",
+      "layout": "list",
+      "content": [
+        {
+          "layout": "left",
+          "title": "12devs",
+          "sub_title": "JavaScript/TypeScript Backend Developer",
+          "caption": "April 2021 - present",
+          "link": "12devs.com",
+          "quote": "Team of developers which has been creating effective IT solutions for small and medium-sized businesses around the world since 2012",
+          "description": "Pretty small company, but all the projects use relatively modern technologies. Quite pleasant experience to work here."
+        },
+        {
+          "layout": "left",
+          "title": "IntexSoft",
+          "sub_title": "Junior Java Developer",
+          "caption": "October 2019 – April 2021",
+          "link": "intexsoft.com",
+          "quote": "IntexSoft delivers end-to-end software development services for businesses and IT companies. Organizing teamwork, we take care of the development process while our clients are making progress",
+          "description": "It was my first experience in developing production software. Learned a lot of useful stuff here. But technologies was way too obsolete, and that was not the technological stack I was interested in when I applied to the position. Eventually, I had to move on to maintain professional growth."
+        }
+      ]
+    },
+    {
+      "layout": "text",
+      "title": "Professional Skills"
+    }
+  ]
+}
