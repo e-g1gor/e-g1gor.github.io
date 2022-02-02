@@ -6,8 +6,13 @@
   "scripts": {
     "build:css": "ts-node ./dev/build.ts --css",
     "build:html": "ts-node ./dev/build.ts --html",
-    "build": "ts-node ./dev/build.ts --html --css",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "ts-node ./dev/build.ts --html",
+    "build:docs": "ts-node ./dev/build.ts --html --css -o=docs",
+    "release:major": "npm version major -m \"Released new major version %s on `date +'%Y-%m-%d'`.\"",
+    "release:minor": "npm version minor -m \"Released new minor version %s on `date +'%Y-%m-%d'`.\"",
+    "release:patch": "npm version patch -m \"Released new patch version %s on `date +'%Y-%m-%d'`.\"",
+    "preversion": "git pull --ff-only && npm run build:docs && git add .",
+    "test": "echo \"INFO: no test specified\""
   },
   "keywords": [
     "CV",

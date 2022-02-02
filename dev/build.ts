@@ -2,6 +2,8 @@ import fs = require("fs-extra");
 import pug from "pug";
 import sass from "sass";
 import MarkdownIt from "markdown-it";
+import { IArgs } from "./build.types";
+import { ISocialData, ICVData } from "./template.types";
 const md = new MarkdownIt({
   html: true,
   linkify: true,
@@ -9,72 +11,33 @@ const md = new MarkdownIt({
   langPrefix: "highlight-",
 });
 
-const argv = require("minimist")(process.argv.slice(2));
+// Parse build options from arguments
+const argv: IArgs = require("minimist")(process.argv.slice(2));
 const {
+  html: HTML = true,
+  pdf: PDF = false,
+  css: CSS = true,
+  watch: WATCH = false,
   cv: CV = "junior-js_ts-dev",
-  html: HTML,
-  pdf: PDF,
-  css: CSS,
-  template,
+  o: OUTPUT_DIR = "dist",
 } = argv;
 const CV_DATA_ROOT: string = "./src/cv-data";
 const CV_VERSION_ROOT: string = `${CV_DATA_ROOT}/cvs/${CV}`;
-
+// Print build options
 console.log({
-  CV,
   HTML,
   PDF,
   CSS,
-  template,
+  WATCH,
+  OUTPUT_DIR,
+  CV,
+  CV_DATA_ROOT,
+  CV_VERSION_ROOT,
 });
 
-interface SectionCommon {
-  layout: "projects" | "list" | "text";
-  title: string;
-}
-
-interface IItemCommon {
-  title: string;
-  layout?: "top-middle" | "left" | "right";
-}
-
-interface ListItem extends IItemCommon {
-  description?: string;
-  border?: "weak" | string;
-  role?: "Developer" | string;
-  quote?: string;
-}
-
-interface ListSection extends SectionCommon {
-  layout: "projects" | "list";
-  content: Array<ListItem>;
-}
-
-interface TextSection extends SectionCommon {
-  layout: "text";
-  content?: string;
-}
-
-interface ICVData {
-  about: {
-    content: string;
-    title?: string;
-    profile_photo?: string;
-  };
-  level?: "Junior" | "Middle" | "Senior";
-  position?: string;
-  name?: string;
-  sections: Array<ListSection | TextSection>;
-}
-
-interface SocialData {
-  linkedin?: string;
-  github?: string;
-}
-
-const SOCIAL_DATA: SocialData = fs.readJsonSync(`${CV_DATA_ROOT}/social.json`);
+const SOCIAL_DATA: ISocialData = fs.readJsonSync(`${CV_DATA_ROOT}/social.json`);
 const CV_DATA: ICVData = fs.readJsonSync(`${CV_VERSION_ROOT}/data.json`);
-const DATA: ICVData & { social: SocialData } = Object.assign(
+const DATA: ICVData & { social: ISocialData } = Object.assign(
   {},
   { social: SOCIAL_DATA },
   CV_DATA
@@ -123,12 +86,12 @@ if (HTML) {
   // Render with a set of data
   const htmlContent = compiledFunction(DATA);
   // Save html content
-  fs.outputFileSync("./dist/index.html", htmlContent);
+  fs.outputFileSync(`./${OUTPUT_DIR}/index.html`, htmlContent);
 }
 
 if (CSS) {
   // Compile SCSS
   const cssContent = sass.compile("./src/scss/modern-resume-theme.scss");
   // Save CSS content
-  fs.outputFileSync("./dist/main.css", cssContent.css);
+  fs.outputFileSync(`./${OUTPUT_DIR}/main.css`, cssContent.css);
 }
