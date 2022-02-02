@@ -6,6 +6,9 @@
     "username": "e-g1gor"
   },
   "email": {
-    "href": "e.g2gor@gmail.com"
+    "href": "e.g2gor@gmail.com",
+    "params": {
+      "subject": "CV | Egor Klenin"
+    }
   }
 }
