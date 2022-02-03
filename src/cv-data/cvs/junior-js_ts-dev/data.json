@@ -38,6 +38,7 @@
           "layout": "top-middle",
           "border": "weak",
           "title": "OMN",
+          "link": "apollon.de/en/products/online-media-net/",
           "role": "Developer",
           "dates": "October 2019 – April 2021",
           "quote": "It's used to cover the whole process of printed media production preparation from catalog/page concept to getting hard copy from print machine. The system has plugin client-server architecture that allows extending both server and client functionality."
