@@ -8,6 +8,7 @@
 | **Programming Technologies, framework, platforms** |                       |                                          |                  |
 | ExpressJS                                          | 3                     | Advanced                                 | 2021             |
 | NestJS                                             | 1                     | Interm                                   | 2021             |
+| Angular 1                                          | 1                     | Novice                                   | 2022             |
 | Camunda                                            | 1                     | Interm                                   | 2021             |
 | Apache Kafka                                       | 1.5                   | Interm                                   | 2021             |
 | **Databases**                                      |                       |                                          |                  |
