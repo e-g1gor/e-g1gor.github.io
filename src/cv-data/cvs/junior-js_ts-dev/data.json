@@ -6,6 +6,30 @@
   },
   "sections": [
     {
+      "title": "Experience",
+      "layout": "list",
+      "content": [
+        {
+          "layout": "left",
+          "title": "12devs",
+          "sub_title": "JavaScript/TypeScript Backend Developer",
+          "caption": "April 2021 - present",
+          "link": "12devs.com",
+          "quote": "Team of developers which has been creating effective IT solutions for small and medium-sized businesses around the world since 2012",
+          "description": "Pretty small company, but all the projects use relatively modern technologies. Quite pleasant experience to work here."
+        },
+        {
+          "layout": "left",
+          "title": "IntexSoft",
+          "sub_title": "Junior Java Developer",
+          "caption": "August 2019 – April 2021",
+          "link": "intexsoft.com",
+          "quote": "IntexSoft delivers end-to-end software development services for businesses and IT companies. Organizing teamwork, we take care of the development process while our clients are making progress",
+          "description": "It was my first experience in developing production software. Learned a lot of useful stuff here. But technologies was way too obsolete, and that was not the technological stack I was interested in when I applied to the position. Eventually, I had to move on to maintain professional growth."
+        }
+      ]
+    },
+    {
       "title": "Projects",
       "layout": "projects",
       "content": [
@@ -42,30 +66,6 @@
           "role": "Developer",
           "dates": "August 2019 – April 2021",
           "quote": "It's used to cover the whole process of printed media production preparation from catalog/page concept to getting hard copy from print machine. The system has plugin client-server architecture that allows extending both server and client functionality."
-        }
-      ]
-    },
-    {
-      "title": "Experience",
-      "layout": "list",
-      "content": [
-        {
-          "layout": "left",
-          "title": "12devs",
-          "sub_title": "JavaScript/TypeScript Backend Developer",
-          "caption": "April 2021 - present",
-          "link": "12devs.com",
-          "quote": "Team of developers which has been creating effective IT solutions for small and medium-sized businesses around the world since 2012",
-          "description": "Pretty small company, but all the projects use relatively modern technologies. Quite pleasant experience to work here."
-        },
-        {
-          "layout": "left",
-          "title": "IntexSoft",
-          "sub_title": "Junior Java Developer",
-          "caption": "August 2019 – April 2021",
-          "link": "intexsoft.com",
-          "quote": "IntexSoft delivers end-to-end software development services for businesses and IT companies. Organizing teamwork, we take care of the development process while our clients are making progress",
-          "description": "It was my first experience in developing production software. Learned a lot of useful stuff here. But technologies was way too obsolete, and that was not the technological stack I was interested in when I applied to the position. Eventually, I had to move on to maintain professional growth."
         }
       ]
     },
